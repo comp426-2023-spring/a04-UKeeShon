@@ -2,7 +2,7 @@
   "name": "a04-ukeeshon",
   "version": "0.0.1",
   "description": "Assignment4",
-  "main": "server.mjs",
+  "main": "server.js",
   "scripts": {
     "test": "node server.js --port=5555",
     "start": "nodemon server.js --port=6000"
