@@ -7,3 +7,31 @@ import minimist from "minimist"
 const app = express();
 const argv = minimist(process.argv.slice(2))
 const port = argv.port || 5000;
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+app.listen(port,() => {
+	console.log(`Listening on port ${port}`);
+})
+
+app.get('/app', (req, res) => {
+	res.status(200).send('200 OK');
+})
+
+app.get('/app/rps', (req, res) => {
+	res.status(200).send(rps());
+})
+
+app.get('/app/rpsls', (req, res)) => {
+	res.status(200).send(rpsls());
+})
+
+app.get('/app/rps/play', (req, res) => {
+	res.status(200).send(rps(req.query.shot));
+})
+
+app.get('/app/rpsls/play', (req, res) => {
+	res.status(200).send(rpsls(req.query.shot));
+})
+
