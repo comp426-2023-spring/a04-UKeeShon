@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 const { rps, rpsls } = require( "./lib/rpsls.js");
-import express from "express"
-import minimist from "minimist"
+const express = require("express")
+const minimist = require("minimist")
 
 const app = express();
 const argv = minimist(process.argv.slice(2))
